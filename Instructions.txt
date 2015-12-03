@@ -12,7 +12,7 @@
 
 3) From your computer, open the terminal and enter the following command:
 	
-	git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-helloworld
+	git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush
 
 
 4) Add the native platforms to your app
@@ -26,7 +26,7 @@
 		cordova platform add ios
 
 
-5) Follow the README instructions for "Installation" and "Configuration" here to add the cordova plugin and configure your development environment: httcops://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-core/#installation
+5) Follow the README instructions for "Installation" and "Configuration" here to add the cordova plugin and configure your development environment: https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push#installation
 
 !!! Project will not build until you follow instructions from step (3)
 
