@@ -19,8 +19,8 @@
 
 var app =  {
     // Bluemix credentials
-    route: "<APPLICATION_ROUTE>",
-    guid: "<APPLICATION_GUID>",
+    route: "http://HelloMatt.mybluemix.net",
+    guid: "36fe7be8-5eda-42c0-bf2c-19ced26a3278",
 
     // Initialize BMSClient
     initialize: function() {
@@ -43,10 +43,8 @@ var app =  {
         BMSClient.initialize(app.route, app.guid);
     },
 
-    // Ping Bluemix
-    ping: function() {
-        var request = new MFPRequest(this.route + "/protected", MFPRequest.GET);
-
+    // Register for Push Notifications
+    register: function() {
         var header = document.getElementById("text-big");
         var connected = document.getElementById("text-connected");
         var details = document.getElementById("text-details");
@@ -54,8 +52,7 @@ var app =  {
         var success = function(successResponse) {
             header.style.display = "block";
             header.innerHTML = "Yay!";
-            connected.innerHTML = "You are connected!";
-            details.innerHTML = "<h4>Response:</h4><i>" + successResponse.responseText + "</i>";
+            connected.innerHTML = "You are registered for Push Notifications!";
             //alert("Request success!\n\n" + JSON.stringify(successResponse));
         };
 
@@ -63,11 +60,30 @@ var app =  {
             header.style.display = "block";
             header.innerHTML = "Bummer";
             connected.innerHTML = "Something Went Wrong";
-            details.innerHTML = "<h4>Response:</h4><i>" + failureResponse.errorDescription + "</i>";
+            details.innerHTML = "<h4>Response:</h4><i>" + failureResponse + "</i>";
             //alert("Request failure!\n\n" + JSON.stringify(failureResponse));
         };
 
-        request.send(success, failure);
+        // Optional parameter, but must follow this format
+        var settings = {
+            ios: {
+                alert: true,
+                badge: true,
+                sound: true
+            }
+        };
+
+        MFPPush.registerDevice(settings, success, failure);
+
+        //this.registerNotificationsCallback();
+    }
+
+    // Register notification callback to handle notification when in app
+    registerNotificationsCallback: function() {
+        var showNotification function(notif) {
+          alert(JSON.stringify(notif));
+        };
+        MFPPush.registerNotificationsCallback(showNotification);
     }
 };
 

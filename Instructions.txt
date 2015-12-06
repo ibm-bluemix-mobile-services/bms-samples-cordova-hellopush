@@ -30,6 +30,10 @@
 
 !!! Project will not build until you follow instructions from step (3)
 
+Capabilities -> Enable "Push Notifications"
+Capabilities -> Enabled "Background Modes"
+				-> Check "Remote Notifications"
+
 
 6) In the "index.js" file, replace the <APPLICATION_ROUTE> and <APPLICATION_GUID> with your Bluemix application ID and route.
 
