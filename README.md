@@ -29,7 +29,7 @@ Configure Push Notification service:
 
 Clone the samples with the following command:
 	
-	git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-helloworld
+	git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush
 	
 ### Add the native platforms to your app
 
