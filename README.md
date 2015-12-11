@@ -36,9 +36,15 @@ Clone the samples with the following command:
 	cordova platform add ios
 	cordova platform add android
 	
+## Add the plugin
+
+	cordova pluging add ibm-mfp-push
+	
+> Adding the ibm-mfp-push plugin also adds the ibm-mfp-core plugin
+	
 ### Configure Cordova
 
-Follow the README instructions for "Installation" and "Configuration" here to add the cordova plugin and configure your development environment: <https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/#installation>
+Follow the README instructions for "Configuration" here to configure your development environment: <https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/#configuration>
 
 ***Note: Project will not build until you follow instructions from this step.***
   
