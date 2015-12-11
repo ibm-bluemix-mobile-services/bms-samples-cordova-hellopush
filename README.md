@@ -44,7 +44,7 @@ Clone the samples with the following command:
 	
 ### Configure Cordova
 
-Follow the README instructions for "Configuration" here to configure your development environment: <https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/#configuration>
+Follow the README instructions for [Configuration](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/#configuration) to configure your development environment.
 
 ***Note: Project will not build until you follow instructions from this step.***
   
