@@ -60,6 +60,9 @@ Javascript:
 
 Now you can run your application in your mobile emulator or on your device.
 
+	cordova run ios
+	cordova run android
+
 ***Note: If testing iOS you need to use a real device connected to your network to register and receive notifications.***
 
 You will see a single view application with a "REGISTER" button. When you click this button the application will attempt to register the device and application to the Push Notification Service. The application will then display if the registration was successful or unsuccessful. In the unsuccessful state an error will be displayed in the Xcode/Android log, as well as in the application.
