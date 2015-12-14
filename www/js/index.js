@@ -19,8 +19,8 @@
 
 var app =  {
     // Bluemix credentials
-    route: "http://HelloMatt.mybluemix.net",
-    guid: "36fe7be8-5eda-42c0-bf2c-19ced26a3278",
+    route: "<APPLICATION ROUTE>",
+    guid: "<APPLICATION GUID>",
 
     // Initialize BMSClient
     initialize: function() {
@@ -41,7 +41,6 @@ var app =  {
     // variables, we must explicitly call 'app.route' and 'app.guid'
     onDeviceReady: function() {
         BMSClient.initialize(app.route, app.guid);
-        app.registerNotificationsCallback();
     },
 
     // Register for Push Notifications
@@ -76,7 +75,7 @@ var app =  {
 
         MFPPush.registerDevice(settings, success, failure);
 
-        //this.registerNotificationsCallback();
+        this.registerNotificationsCallback();
     },
 
     // Register notification callback to handle notification when in app
