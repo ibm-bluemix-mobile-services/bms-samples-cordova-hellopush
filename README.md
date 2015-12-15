@@ -39,7 +39,7 @@ Clone the samples with the following command:
 	
 ## Add the plugin
 
-	cordova pluging add ibm-mfp-push
+	cordova plugin add ibm-mfp-push
 	
 > Adding the ibm-mfp-push plugin also adds the ibm-mfp-core plugin
 	
@@ -63,14 +63,21 @@ Javascript:
 
 ***Note: Don't forget commas at the end of each line!***
 
-### Run the Cordova App
+### Build/Run the Cordova App
 
 Now you can run your application in your mobile emulator or on your device.
 
-	cordova run ios
-	cordova run android
+1. Build the Cordova app. From your terminal enter the following command:
 
-***Note: If testing iOS you need to use a real device connected to your network to register and receive notifications.***
+		cordova build ios
+		cordova build android
+
+2. Run the sample app. From your terminal enter the following command:
+
+		cordova run ios
+		cordova run android
+
+***Note: If testing iOS you need to use a real device connected to your network and build/run from Xcode to register for and receive notifications.***
 
 You will see a single view application with a "REGISTER" button. When you click this button the application will attempt to register the device and application to the Push Notification Service. The application will then display if the registration was successful or unsuccessful. In the unsuccessful state an error will be displayed in the Xcode/Android log, as well as in the application.
 
