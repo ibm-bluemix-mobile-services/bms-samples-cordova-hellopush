@@ -17,29 +17,35 @@ Before you can run the sample application, you must set up an app on Bluemix.  T
 Create a mobile backend in the  Bluemix dashboard:
 
 1. In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
-2. Enter a name and host for your mobile backend and click **Create**.
-3. Click **Finish**.
+1. Enter a name and host for your mobile backend and click **Create**.
+1. Click **Finish**.
 
 Configure Push Notification service:
 
-1.	In the IBM Push Notifications Dashboard, go to the **Configuration** tab to configure your Push Notification Service.  
-2.  In the Apple Push Certificate section, select the Sandbox environment
-3.  Upload a valid APNs enabled push certificate (.p12 file), then enter the password associated with the certificate.
+1. In the IBM Push Notifications Dashboard, go to the **Configuration** tab to configure your Push Notification Service.  
+1. In the Apple Push Certificate section, select the Sandbox environment
+1. Upload a valid APNs enabled push certificate (.p12 file), then enter the password associated with the certificate.
 
 ### Download the sample
 
 Clone the samples with the following command:
-	
-	git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush
+
+```Bash	
+git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush
+```
 	
 ### Add the native platforms to your app
 
-	cordova platform add ios
-	cordova platform add android
+```Bash
+cordova platform add ios
+cordova platform add android
+```
 	
 ## Add the plugin
 
-	cordova plugin add ibm-mfp-push
+```Bash
+cordova plugin add ibm-mfp-push
+```
 	
 > Adding the ibm-mfp-push plugin also adds the ibm-mfp-core plugin
 	
@@ -52,14 +58,16 @@ Follow the README instructions for [Configuration](https://github.com/ibm-bluemi
 ### Configure the front end in the sample
 
 1. Navigate to the directory where the project was cloned.
-2. Open **index.js** located at [your-directory]/www/js/index.js
-3. Replace the \<APPLICATION_ROUTE\> and \<APPLICATION_GUID\> with your Bluemix route and appGUID.
+1. Open **index.js** located at [your-directory]/www/js/index.js
+1. Replace the \<APPLICATION_ROUTE\> and \<APPLICATION_GUID\> with your Bluemix route and appGUID.
 
 Javascript:
 
-	// Bluemix credentials
-	route: "<APPLICATION_ROUTE>",
-	guid: "<APPLICATION_GUID>",
+```Javascript
+// Bluemix credentials
+route: "<APPLICATION_ROUTE>",
+guid: "<APPLICATION_GUID>",
+```
 
 ***Note: Don't forget commas at the end of each line!***
 
@@ -69,13 +77,17 @@ Now you can run your application in your mobile emulator or on your device.
 
 1. Build the Cordova app. From your terminal enter the following command:
 
-		cordova build ios
-		cordova build android
+	```Bash
+	cordova build ios
+	cordova build android
+	```
 
 2. Run the sample app. From your terminal enter the following command:
 
-		cordova run ios
-		cordova run android
+	```Bash
+	cordova run ios
+	cordova run android
+	```
 
 ***Note: If testing iOS you need to use a real device connected to your network and build/run from Xcode to register for and receive notifications.***
 
