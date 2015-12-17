@@ -16,9 +16,9 @@ Before you can run the sample application, you must set up an app on Bluemix.  T
 
 Create a mobile backend in the  Bluemix dashboard:
 
-1.	In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
-2.	Enter a name and host for your mobile backend and click **Create**.
-3.	Click **Finish**.
+1. In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
+2. Enter a name and host for your mobile backend and click **Create**.
+3. Click **Finish**.
 
 Configure Push Notification service:
 
