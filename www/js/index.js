@@ -41,6 +41,7 @@ var app =  {
     // variables, we must explicitly call 'app.route' and 'app.guid'
     onDeviceReady: function() {
         BMSClient.initialize(app.route, app.guid);
+        app.registerNotificationsCallback();
     },
 
     // Register for Push Notifications
@@ -73,17 +74,12 @@ var app =  {
         };
 
         MFPPush.registerDevice(settings, success, failure);
-
-        this.registerNotificationsCallback();
     },
 
     // Register notification callback to handle notification when in app
     registerNotificationsCallback: function() {
         var showNotification = function(notif) {
           alert(JSON.stringify(notif));
-        };
-        var showFailure = function(failure) {
-          alert(JSON.stringify(failure));
         };
         MFPPush.registerNotificationsCallback(showNotification);
     }
