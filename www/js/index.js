@@ -53,7 +53,7 @@ var app =  {
             header.style.display = "block";
             header.innerHTML = "Yay!";
             connected.innerHTML = "You are registered for Push Notifications.";
-            //alert("Request success!\n\n" + JSON.stringify(successResponse));
+            details.innerHTML = "<h4>Response:</h4><i>" + successResponse + "</i>";
         };
 
         var failure = function(failureResponse) {
@@ -61,7 +61,6 @@ var app =  {
             header.innerHTML = "Bummer";
             connected.innerHTML = "Something Went Wrong";
             details.innerHTML = "<h4>Response:</h4><i>" + failureResponse + "</i>";
-            //alert("Request failure!\n\n" + JSON.stringify(failureResponse));
         };
 
         // Optional parameter, but must follow this format
