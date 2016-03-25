@@ -8,7 +8,7 @@ Before you start, make sure you have the following:
 
 - A [Bluemix](http://bluemix.net) account.
 - Learn about [Getting Started with Push](https://www.ng.bluemix.net/docs/services/mobilepush/index.html).
-- APNs enabled push certificate (.p12 file) and the certificate password for your sandbox environment. For information about how to obtain a p.12 certificate, see the [configuring credentials for a notification provider](https://www.ng.bluemix.net/docs/services/mobilepush/index.html#push_provider) section in the Push documentation.
+- APNs enabled push certificate (.p12 file) and the certificate password for your sandbox environment. For information about how to obtain a p.12 certificate, see the [configuring credentials for Apple push notifications(APNs)](https://www.bluemix.net/docs/services/mobilepush/t_push_provider_ios.html) section in the Push documentation.
 
 ### Configure the mobile backend in Bluemix
 
