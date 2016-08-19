@@ -45,6 +45,9 @@ var app =  {
     },
 
     // Register for Push Notifications
+    //
+    // Sends a request to the Push Notifications service on Bluemix to register
+    // The success and failure variables handle the callback response for each case 
     register: function() {
         var header = document.getElementById("text-big");
         var connected = document.getElementById("text-connected");
@@ -65,6 +68,9 @@ var app =  {
         };
 
         // Optional parameter, but must follow this format
+        //
+        // For iOS, the setting parameter enables alerts, badges, and sound 
+        // Android does NOT make use of the settings parameter
         var settings = {
             ios: {
                 alert: true,

@@ -37,7 +37,7 @@ git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hel
 ### Add the native platforms to your app
 
 ```Bash
-cordova platform add ios
+cordova platform add ios@3.9.0
 cordova platform add android
 ```
 	
