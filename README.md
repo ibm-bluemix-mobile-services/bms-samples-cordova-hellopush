@@ -30,43 +30,60 @@ Configure Push Notification service:
 
 Clone the samples with the following command:
 
-```Bash	
+```Bash
 git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush
 ```
-	
+
 ### Add the native platforms to your app
 
 ```Bash
-cordova platform add ios@3.9.0
+cordova platform add ios
 cordova platform add android
 ```
-	
+
 ## Add the plugin
 
 ```Bash
-cordova plugin add ibm-mfp-push
+cordova plugin add bms-push
 ```
-	
-> Adding the ibm-mfp-push plugin also adds the ibm-mfp-core plugin
-	
+
+> Adding the bms-push plugin also adds the bms-core plugin
+
 ### Configure Cordova
 
 Follow the README instructions for [Configuration](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/#configuration) to configure your development environment.
 
 ***Note: Project will not build until you follow instructions from this step.***
-  
+
 ### Configure the front end in the sample
 
 1. Navigate to the directory where the project was cloned.
-1. Open **index.js** located at [your-directory]/www/js/index.js
-1. Replace the \<APPLICATION_ROUTE\> and \<APPLICATION_GUID\> with your Bluemix route and appGUID.
+2. Open <b>index.js</b> located at [your-directory]/www/js/index.js
+3. Replace the `"SERVER_URL"` and set your region.
+4. Make sure your route is using **https**.
 
-Javascript:
+JavaScript:
 
 ```Javascript
 // Bluemix credentials
-route: "<APPLICATION_ROUTE>",
-guid: "<APPLICATION_GUID>",
+//
+// Create a MobileFirst Services starter service instance and copy the route e.g. "https://myhostname.mybluemix.net"
+route: "SERVER_URL",
+```
+
+```Javascript
+// deviceready Event Handler
+//
+// Replace the appGuid and clientSecret with your own values
+// These can be retrieved from your Push Notifications service instance
+// Set the region: BMSClient.REGION_US_SOUTH, BMSClient.REGION_UK, or BMSClient.REGION_SYDNEY
+onDeviceReady: function() {
+		var appGuid = "MY APP GUID";
+		var clientSecret = "MY CLIENT SECRET";
+
+		BMSClient.initialize(BMSClient.REGION_US_SOUTH);
+		BMSPush.initialize(appGuid, clientSecret);
+},
 ```
 
 ***Note: Don't forget commas at the end of each line!***
