@@ -19,8 +19,9 @@
 
 var app =  {
     // Bluemix credentials
-    route: "<APPLICATION_ROUTE>",
-    guid: "<APPLICATION_GUID>",
+    //
+    // Create a MobileFirst Services starter service instance and copy the route e.g. "https://myhostname.mybluemix.net"
+    route: "SERVER_URL",
 
     // Initialize BMSClient
     initialize: function() {
@@ -37,17 +38,17 @@ var app =  {
 
     // deviceready Event Handler
     //
-    // The scope of 'this' is the event. In order to use the 'route' and 'guid'
-    // variables, we must explicitly call 'app.route' and 'app.guid'
+    // Replace the appGuid and clientSecret with your own values
+    // These can be retrieved from your Push Notifications service instance
+    // Set the region: BMSClient.REGION_US_SOUTH, BMSClient.REGION_UK, or BMSClient.REGION_SYDNEY
     onDeviceReady: function() {
-        BMSClient.initialize(app.route, app.guid);
-        app.registerNotificationsCallback();
+        var appGuid = "MY APP GUID";
+        var clientSecret = "MY CLIENT SECRET";
+
+        BMSClient.initialize(BMSClient.REGION_US_SOUTH);
+        BMSPush.initialize(appGuid, clientSecret);
     },
 
-    // Register for Push Notifications
-    //
-    // Sends a request to the Push Notifications service on Bluemix to register
-    // The success and failure variables handle the callback response for each case 
     register: function() {
         var header = document.getElementById("text-big");
         var connected = document.getElementById("text-connected");
@@ -67,19 +68,8 @@ var app =  {
             details.innerHTML = "<h4>Response:</h4><i>" + failureResponse + "</i>";
         };
 
-        // Optional parameter, but must follow this format
-        //
-        // For iOS, the setting parameter enables alerts, badges, and sound 
-        // Android does NOT make use of the settings parameter
-        var settings = {
-            ios: {
-                alert: true,
-                badge: true,
-                sound: true
-            }
-        };
-
-        MFPPush.registerDevice(settings, success, failure);
+        BMSPush.registerDevice({"userId":"you"}, success, failure);
+        app.registerNotificationsCallback();
     },
 
     // Register notification callback to handle notification when in app
@@ -87,7 +77,7 @@ var app =  {
         var showNotification = function(notif) {
           alert(JSON.stringify(notif));
         };
-        MFPPush.registerNotificationsCallback(showNotification);
+        BMSPush.registerNotificationsCallback(showNotification);
     }
 };
 
