@@ -59,17 +59,8 @@ Follow the README instructions for [Configuration](https://github.com/ibm-bluemi
 
 1. Navigate to the directory where the project was cloned.
 2. Open <b>index.js</b> located at [your-directory]/www/js/index.js
-3. Replace the `"SERVER_URL"` and set your region.
-4. Make sure your route is using **https**.
 
 JavaScript:
-
-```Javascript
-// Bluemix credentials
-//
-// Create a MobileFirst Services starter service instance and copy the route e.g. "https://myhostname.mybluemix.net"
-route: "SERVER_URL",
-```
 
 ```Javascript
 // deviceready Event Handler
