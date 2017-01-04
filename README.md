@@ -73,7 +73,11 @@ onDeviceReady: function() {
 		var clientSecret = "MY CLIENT SECRET";
 
 		BMSClient.initialize(BMSClient.REGION_US_SOUTH);
-		BMSPush.initialize(appGuid, clientSecret);
+
+    // iOS Actionable notification options. Eg : {"category_Name":[{"identifier_name_1":"action_Name_1"},{"identifier_name_2":"action_Name_2"}]}
+       // Pass empty for Android
+    var category = {};
+		BMSPush.initialize(appGuid, clientSecret, category);
 },
 ```
 

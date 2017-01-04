@@ -41,7 +41,11 @@ var app =  {
         var clientSecret = "MY CLIENT SECRET";
 
         BMSClient.initialize(BMSClient.REGION_US_SOUTH);
-        BMSPush.initialize(appGuid, clientSecret);
+        
+        // iOS Actionable notification options. Eg : {"category_Name":[{"identifier_name_1":"action_Name_1"},{"identifier_name_2":"action_Name_2"}]}
+        // Pass empty for Android
+        var category = {};
+        BMSPush.initialize(appGuid, clientSecret, category);
     },
 
     register: function() {
@@ -63,7 +67,7 @@ var app =  {
             details.innerHTML = "<h4>Response:</h4><i>" + failureResponse + "</i>";
         };
 
-        BMSPush.registerDevice({"userId":"you"}, success, failure);
+        BMSPush.registerDevice({"userId":"your_UserId"}, success, failure);
         app.registerNotificationsCallback();
     },
 
