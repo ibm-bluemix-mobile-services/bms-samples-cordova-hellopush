@@ -1,4 +1,4 @@
-# HelloPush Cordova application for IBM MobileFirst Services on IBM Bluemix
+# HelloPush Cordova application for IBM Cloud Push Notifications Services
 
 The HelloPush sample contains a Cordova project that you can use to learn.
 
@@ -6,25 +6,20 @@ The HelloPush sample contains a Cordova project that you can use to learn.
 
 Before you start, make sure you have the following:
 
-- A [Bluemix](http://bluemix.net) account.
+- A [IBM Cloud](http://bluemix.net) account.
 - Learn about [Getting Started with Push](https://www.ng.bluemix.net/docs/services/mobilepush/index.html).
-- APNs enabled push certificate (.p12 file) and the certificate password for your sandbox environment. For information about how to obtain a p.12 certificate, see the [configuring credentials for Apple push notifications(APNs)](https://www.bluemix.net/docs/services/mobilepush/t_push_provider_ios.html) section in the Push documentation.
+- APNs enabled push certificate (.p12 file) and the certificate password for your sandbox environment. For information about how to obtain a p.12 certificate, see the [configuring credentials for Apple push notifications(APNs)](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios) section in the Push documentation. For FCM find teh details here - [FCM Configurations](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_android).
 
-### Configure the mobile backend in Bluemix
+### Create IBM Cloud Push Notifications Service
 
-Before you can run the sample application, you must set up an app on Bluemix.  The following procedure shows you how to create a MobileFirst Services Starter application. A Node.js runtime environment is created so that you can provide server-side functions, such as resource URIs and static files. The Cloudant®NoSQL DB, IBM Push Notifications, and Mobile Client Access services are then added to the app.
 
-Create a mobile backend in the  Bluemix dashboard:
+Create and Configure Push Notification service:
 
-1. In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
-1. Enter a name and host for your mobile backend and click **Create**.
-1. Click **Finish**.
+1. In the IBM Cloud Push Notifications Dashboard, go to the **Configuration** tab to configure your Push Notification Service.  
+2. In the Apple Push Certificate section, select the Sandbox environment
+3. Upload a valid APNs enabled push certificate (.p12 file), then enter the password associated with the certificate.
+4. For FCM add the SenderID and APIKey
 
-Configure Push Notification service:
-
-1. In the IBM Push Notifications Dashboard, go to the **Configuration** tab to configure your Push Notification Service.  
-1. In the Apple Push Certificate section, select the Sandbox environment
-1. Upload a valid APNs enabled push certificate (.p12 file), then enter the password associated with the certificate.
 
 ### Download the sample
 
@@ -105,11 +100,9 @@ Now you can run your application in your mobile emulator or on your device.
 
 You will see a single view application with a "REGISTER" button. When you click this button the application will attempt to register the device and application to the Push Notification Service. The application will then display if the registration was successful or unsuccessful. In the unsuccessful state an error will be displayed in the Xcode/Android log, as well as in the application.
 
-Once your device is registered for Push Notifications, it is ready to receive remote notifications. In the Bluemix Push Dashboard, navigate to Notifications. Under **Choose The Audience** select **All Devices**. This will send a notification to all devices that have registered for push notifications. Once the notification is received by your app an alert should appear with notification contents.
+Once your device is registered for Push Notifications, it is ready to receive remote notifications. In the IBM Cloud Push Dashboard, navigate to Notifications. Under **Choose The Audience** select **All Devices**. This will send a notification to all devices that have registered for push notifications. Once the notification is received by your app an alert should appear with notification contents.
 
 ***Note: For iOS, this application runs on the latest version of XCode (7.0). You may need to update the application settings by setting Enable Bitcode to No. For more info please see the following blog entry:***
-
-[Connect Your iOS 9 App to Bluemix](https://developer.ibm.com/bluemix/2015/09/16/connect-your-ios-9-app-to-bluemix/)
 
 
 ## Adding Auto signing in iOS
@@ -178,7 +171,7 @@ After that to build ios use the `--buildConfig` flag in `cordova build` command
 
 * Please visit for samples - [Github Sample](https://github.com/ibm-bluemix-mobile-services/bms-samples-android-hellopush)
 
-* Video Tutorials Available here - [Bluemix Push Notifications](https://www.youtube.com/channel/UCRr2Wou-z91fD6QOYtZiHGA)
+* Video Tutorials Available here - [IBM Cloud Push Notifications](https://www.youtube.com/channel/UCRr2Wou-z91fD6QOYtZiHGA)
 
 
 ### License
